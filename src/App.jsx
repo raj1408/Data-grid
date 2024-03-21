@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Customer from "./components/Customer";
+import Searchbox from "./components/Searchbox";
 import image1 from "./assets/images/image-1.png";
 import image2 from "./assets/images/image-2.png";
 import image3 from "./assets/images/image-3.png";
@@ -135,7 +136,19 @@ function App() {
     latestPurchase: "asc",
   });
 
+  const [searchQuery, setSearchQuery] = useState("");
   const [customers, setCustomers] = useState(originalCustomers);
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    const filteredCustomers = query
+      ? originalCustomers.filter((customer) =>
+          customer.name.toLowerCase().includes(query.toLowerCase())
+        )
+      : originalCustomers;
+    setCustomers(filteredCustomers);
+  };
+
   const toggleSortOrder = (key) => {
     setOption((prevState) => ({
       ...prevState,
@@ -206,6 +219,7 @@ function App() {
 
   return (
     <div>
+      <Searchbox handleSearch={handleSearch} />
       <Header
         Customer="Customer"
         LastSeen="Last Seen"
