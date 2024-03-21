@@ -142,8 +142,14 @@ function App() {
   const handleSearch = (query) => {
     setSearchQuery(query);
     const filteredCustomers = query
-      ? originalCustomers.filter((customer) =>
-          customer.name.toLowerCase().includes(query.toLowerCase())
+      ? originalCustomers.filter(
+          (customer) =>
+            customer.name.toLowerCase().includes(query.toLowerCase()) ||
+            customer.date.toLowerCase().includes(query.toLowerCase()) ||
+            customer.order.toLowerCase().includes(query.toLowerCase()) ||
+            customer.purchase.toLowerCase().includes(query.toLowerCase()) ||
+            customer.spent.toLowerCase().includes(query.toLowerCase()) ||
+            customer.segment.toLowerCase().includes(query.toLowerCase())
         )
       : originalCustomers;
     setCustomers(filteredCustomers);
