@@ -77,3 +77,14 @@ img {
   margin-left: 5px;
   color: rgb(18, 84, 110);
 }
+
+.searchbox {
+  height: 35px;
+  width: 200px;
+  text-align: center;
+  border: solid #4a4444 2px;
+  border-radius: 10px;
+  font-size: "Sono", monospace;
+  font-size: 17px;
+  margin: 10px;
+}
