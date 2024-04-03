@@ -95,6 +95,6 @@ img {
  }
   .info{
     margin-right: 25px;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
