@@ -88,3 +88,12 @@ img {
   font-size: 17px;
   margin: 10px;
 }
+
+@media(max-width:400px){
+ p{
+  margin: 20px; 
+ }
+  .info{
+    margin-right: 25px;
+  }
+}
