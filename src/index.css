@@ -97,4 +97,7 @@ img {
     margin-right: 25px;
     flex-direction: column;
   }
+  .info>p{
+    margin-left:-10px;
+  }
 }
